@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChiSiamoRouteImport } from './routes/chi-siamo'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as CosaCrediamoRouteImport } from './routes/cosa-crediamo'
+import { Route as IncontriRouteImport } from './routes/incontri'
+import { Route as MinisteriRouteImport } from './routes/ministeri'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChiSiamoRoute = ChiSiamoRouteImport.update({
+  id: '/chi-siamo',
+  path: '/chi-siamo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CosaCrediamoRoute = CosaCrediamoRouteImport.update({
+  id: '/cosa-crediamo',
+  path: '/cosa-crediamo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IncontriRoute = IncontriRouteImport.update({
+  id: '/incontri',
+  path: '/incontri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinisteriRoute = MinisteriRouteImport.update({
+  id: '/ministeri',
+  path: '/ministeri',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/contatti': typeof ContattiRoute
+  '/cosa-crediamo': typeof CosaCrediamoRoute
+  '/incontri': typeof IncontriRoute
+  '/ministeri': typeof MinisteriRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/contatti': typeof ContattiRoute
+  '/cosa-crediamo': typeof CosaCrediamoRoute
+  '/incontri': typeof IncontriRoute
+  '/ministeri': typeof MinisteriRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/contatti': typeof ContattiRoute
+  '/cosa-crediamo': typeof CosaCrediamoRoute
+  '/incontri': typeof IncontriRoute
+  '/ministeri': typeof MinisteriRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/chi-siamo'
+    | '/contatti'
+    | '/cosa-crediamo'
+    | '/incontri'
+    | '/ministeri'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/chi-siamo'
+    | '/contatti'
+    | '/cosa-crediamo'
+    | '/incontri'
+    | '/ministeri'
+  id:
+    | '__root__'
+    | '/'
+    | '/chi-siamo'
+    | '/contatti'
+    | '/cosa-crediamo'
+    | '/incontri'
+    | '/ministeri'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChiSiamoRoute: typeof ChiSiamoRoute
+  ContattiRoute: typeof ContattiRoute
+  CosaCrediamoRoute: typeof CosaCrediamoRoute
+  IncontriRoute: typeof IncontriRoute
+  MinisteriRoute: typeof MinisteriRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chi-siamo': {
+      id: '/chi-siamo'
+      path: '/chi-siamo'
+      fullPath: '/chi-siamo'
+      preLoaderRoute: typeof ChiSiamoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cosa-crediamo': {
+      id: '/cosa-crediamo'
+      path: '/cosa-crediamo'
+      fullPath: '/cosa-crediamo'
+      preLoaderRoute: typeof CosaCrediamoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/incontri': {
+      id: '/incontri'
+      path: '/incontri'
+      fullPath: '/incontri'
+      preLoaderRoute: typeof IncontriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ministeri': {
+      id: '/ministeri'
+      path: '/ministeri'
+      fullPath: '/ministeri'
+      preLoaderRoute: typeof MinisteriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChiSiamoRoute: ChiSiamoRoute,
+  ContattiRoute: ContattiRoute,
+  CosaCrediamoRoute: CosaCrediamoRoute,
+  IncontriRoute: IncontriRoute,
+  MinisteriRoute: MinisteriRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
