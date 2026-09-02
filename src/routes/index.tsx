@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Menu, X } from "lucide-react";
 
-import logoAsset from "@/assets/agape-logo.png.asset.json";
+import logoAsset from "@/assets/agape-mark.png.asset.json";
 import heroImg from "@/assets/hero-worship.jpg";
 import communityImg from "@/assets/community.jpg";
 import bibleImg from "@/assets/bible.jpg";
@@ -84,7 +84,7 @@ function Home() {
             <img
               src={logoAsset.url}
               alt="Chiesa Agape"
-              className="h-9 w-auto transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110 md:h-10"
+              className="h-9 w-auto brightness-0 invert transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110 md:h-10"
             />
             <span className="font-display text-lg uppercase tracking-[0.28em] md:text-xl">
               Agape
@@ -342,7 +342,7 @@ function Home() {
             src={logoAsset.url}
             alt=""
             aria-hidden="true"
-            className="float-slow mx-auto h-14 w-auto"
+            className="float-slow mx-auto h-14 w-auto brightness-0 invert"
           />
           <h2 className="mt-8 text-5xl sm:text-6xl md:text-7xl">{t.ctaTitle}</h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -380,7 +380,7 @@ function Home() {
               </a>
             </div>
             <div className="flex items-start gap-3 md:justify-end">
-              <img src={logoAsset.url} alt="Chiesa Agape" className="h-10 w-auto" />
+              <img src={logoAsset.url} alt="Chiesa Agape" className="h-10 w-auto brightness-0 invert" />
             </div>
           </div>
           <p className="mt-10 text-xs text-muted-foreground">
