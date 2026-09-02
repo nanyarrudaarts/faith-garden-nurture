@@ -342,7 +342,7 @@ function Home() {
             src={logoAsset.url}
             alt=""
             aria-hidden="true"
-            className="float-slow mx-auto h-14 w-auto"
+            className="float-slow mx-auto h-14 w-auto brightness-0 invert"
           />
           <h2 className="mt-8 text-5xl sm:text-6xl md:text-7xl">{t.ctaTitle}</h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
